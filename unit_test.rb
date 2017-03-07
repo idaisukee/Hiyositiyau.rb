@@ -27,4 +27,14 @@ class TC < Test::Unit::TestCase
 		end
 	end
 
+	def test_from_rd_at_epoch
+		assert_equal(Hiyositiyau::from_rd(0), Hiyositiyau::EPOCH)
+	end
+
+	def test_from_rd_is_correct_for_adding
+		(-100_000..100_000).each do |i|
+			assert_equal(Hiyositiyau::from_rd(i), Hiyositiyau::EPOCH + i)
+		end
+	end
+
 end
