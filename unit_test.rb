@@ -14,5 +14,8 @@ class TC < Test::Unit::TestCase
 		assert_equal(0, Hiyositiyau::EPOCH.rd)
 	end
 
+	def test_rd_is_independent_from_time_offest
+		assert_equal(Hiyositiyau::EPOCH.rd, Hiyositiyau::EPOCH.new_offset(0.3).rd)
+	end
 
 end
