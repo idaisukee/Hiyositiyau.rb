@@ -8,6 +8,9 @@ class TC < Test::Unit::TestCase
 	end
 
 	def test_rd_epoch
+
+		# test that Epoch's rd == 0.
+
 		assert_equal(0, Hiyositiyau::EPOCH.rd)
 	end
 
