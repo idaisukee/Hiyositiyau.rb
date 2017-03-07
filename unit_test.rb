@@ -21,9 +21,14 @@ class TC < Test::Unit::TestCase
 	end
 
 	def test_rd_is_correct_for_adding
-
 		(-100_000..100_000).each do |i|
 			assert_equal((Hiyositiyau::EPOCH + i).rd, Hiyositiyau::EPOCH.rd + i)
+		end
+	end
+
+	def test_from_ajd_by_reflection
+		(-100_000..100_000).each do |i|
+			assert_equal(Hiyositiyau::from_ajd(i).ajd, i)
 		end
 	end
 
