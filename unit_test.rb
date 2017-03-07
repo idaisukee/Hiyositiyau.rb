@@ -1,5 +1,5 @@
 require 'test/unit'
-require File.expand_path('../hiyositiyau.rb',  __FILE__)
+require File.expand_path('../Hiyositiyau.rb',  __FILE__)
 
 class TC < Test::Unit::TestCase
 
