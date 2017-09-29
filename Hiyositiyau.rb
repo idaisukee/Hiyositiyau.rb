@@ -10,7 +10,6 @@ require 'date'
 class Hiyositiyau < DateTime
 
 	EPOCH = self.new(1792, 9, 22, 0, 0, 0, Rational(1, 24))
-
 	JST = Rational(9, 24)
 
 	Y = 365
@@ -43,7 +42,7 @@ class Hiyositiyau < DateTime
 		self.ajd - EPOCH.ajd
 	end
 
-	def self::from_gc(year, year_day)
+	def self::from_ordinal(year, yday)
 
 		otohatiyau = Otohatiyau::otohatiyau(year, [400, 100, 4])
 		c = otohatiyau[0][0]
@@ -51,7 +50,7 @@ class Hiyositiyau < DateTime
 		a = otohatiyau[0][2]
 		y = otohatiyau[1][2]
 		days = C * c + B * b + A * a + Y * y
-		sum = days + year_day
+		sum = days + yday
 	end
 
 
